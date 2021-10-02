@@ -24,17 +24,16 @@ func main() {
 	}
 }
 
-
 func shuffleChars() []byte {
 	// shuffle possible a-Za-z|SPECIAL characters with some unique seed
 	characters := "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*-"
 	arr := []byte(characters)
 
 	rand.Seed(time.Now().UnixNano())
-	rand.Shuffle(len(arr), func(left, right int) { 
-		arr[left], 
-		arr[right] = arr[right],
-		arr[left] 
+	rand.Shuffle(len(arr), func(left, right int) {
+		arr[left],
+			arr[right] = arr[right],
+			arr[left]
 	})
 	return arr
 }
